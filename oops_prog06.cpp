@@ -5,8 +5,8 @@ class student;
 
 class average
 {
-    public:
-        double mark_avg(student s1);
+public:
+    double mark_avg(student s1);
 };
 
 class student
@@ -14,48 +14,47 @@ class student
     string name;
     double phy, chem, math, bio, eng;
 
-    public:
-        void get_data()
-        {
-            string n;
-            cout<<"Enter Name : ";
-            getline(cin, n);
-            name = n;
+public:
+    void get_data()
+    {
+        string n;
+        cout << "Enter Name : ";
+        getline(cin, n);
+        name = n;
 
-            double p, c, m, b, e;
-            cout<<"Enter Physics marks : ";
-            cin>>p;
-            cout<<"Enter Chemistry marks : ";
-            cin>>c;
-            cout<<"Enter Mathematics marks : ";
-            cin>>m;
-            cout<<"Enter Biology marks : ";
-            cin>>b;
-            cout<<"Enter English marks : ";
-            cin>>e;
+        double p, c, m, b, e;
+        cout << "Enter Physics marks : ";
+        cin >> p;
+        cout << "Enter Chemistry marks : ";
+        cin >> c;
+        cout << "Enter Mathematics marks : ";
+        cin >> m;
+        cout << "Enter Biology marks : ";
+        cin >> b;
+        cout << "Enter English marks : ";
+        cin >> e;
 
-            phy = p;
-            chem = c;
-            math = m;
-            bio = b;
-            eng = e;
-        }
+        phy = p;
+        chem = c;
+        math = m;
+        bio = b;
+        eng = e;
+    }
 
-        friend class average;
+    friend class average;
 
-        void display()
-        {
-            cout<<"Name is "<<name<<endl;
+    void display()
+    {
+        cout << "Name is " << name << endl;
 
-            average avg;
-            double avg1 = avg.mark_avg(*this);
+        average avg;
+        double avg1 = avg.mark_avg(*this);
 
-            cout<<"Average of marks is : "<<avg1<<endl;
-            
-        }
+        cout << "Average of marks is : " << avg1 << endl;
+    }
 };
 
-double average :: mark_avg(student s1)
+double average ::mark_avg(student s1)
 {
     double sum = s1.phy + s1.chem + s1.math + s1.bio + s1.eng;
     return sum / 5.0;
